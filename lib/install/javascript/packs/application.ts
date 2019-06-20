@@ -1,3 +1,3 @@
 import { hello } from "~/greeter";
 
-hello("Rails");
+console.log(hello("Rails"));
