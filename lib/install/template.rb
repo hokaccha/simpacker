@@ -14,6 +14,12 @@ else
   directory "#{__dir__}/javascript", 'app/javascript'
 end
 
+if File.exists?(".gitignore")
+  append_to_file ".gitignore" do
+    "\n/public/packs\n"
+  end
+end
+
 dep_packages = %w(
   webpack
   webpack-cli
