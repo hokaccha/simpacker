@@ -22,18 +22,16 @@ Run the following to install Simpacker:
 $ rails simpacker:install
 ```
 
-Run the folloing command to build JavaScript and watch files.
+Add `javascript_pack_tag` in view.
 
 ```
-$ npx webpack --watch
-```
-
-## Usage
-
-You can use `javascript_pack_tag` in view.
-
-```erb
 <%= javascript_pack_tag 'application' %>
+```
+
+Run the folloing command to build JavaScript.
+
+```
+$ npx wabpack --watch
 ```
 
 ## Contributing
