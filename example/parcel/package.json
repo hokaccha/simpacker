@@ -1,0 +1,10 @@
+{
+  "name": "example_app",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-bundle-manifest": "^0.2.0",
+    "typescript": "^3.5.2"
+  }
+}
