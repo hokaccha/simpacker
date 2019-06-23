@@ -8,7 +8,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/packs/application.tsx")
+    application: path.resolve(__dirname, "app/javascript/application.tsx")
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -17,10 +17,7 @@ module.exports = {
     chunkFilename: "[id]-[chunkhash].js"
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-    alias: {
-      "~": path.resolve(__dirname, "app/javascript/src")
-    }
+    extensions: [".js", ".ts", ".jsx", ".tsx"]
   },
   module: {
     rules: [

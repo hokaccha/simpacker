@@ -1,4 +1,4 @@
-import { hello } from "../src/greeter";
+import { hello } from "./greeter";
 
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("app");

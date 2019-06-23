@@ -1,4 +1,4 @@
-# Simpacker: parcel example
+# Simpacker parcel example
 
 ## Install simpacker
 
@@ -30,12 +30,12 @@ Because [parcel-plugin-bundle-manifest](https://github.com/mugi-uno/parcel-plugi
 
 ## Update scripts
 
-TypeScript does not work well, so convert it to JavaScript 😭 The root cause is the same as [mugi-uno/parcel-plugin-bundle-manifest#23](https://github.com/mugi-uno/parcel-plugin-bundle-manifest/issues/23#issuecomment-504334592).
+Convert TypeScript to JavaScript, because TypeScript does not work well with parcel 😭 The root cause is the same as [mugi-uno/parcel-plugin-bundle-manifest#23](https://github.com/mugi-uno/parcel-plugin-bundle-manifest/issues/23#issuecomment-504334592).
 
-### app/javascript/packs/application.js
+### app/javascript/application.js
 
 ```javascript
-import { hello } from "../src/greeter";
+import { hello } from "./greeter";
 
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("app");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### app/javascript/src/greeter.js
+### app/javascript/greeter.js
 
 ```javascript
 export function hello(name) {
@@ -56,7 +56,7 @@ export function hello(name) {
 ## Run parcel
 
 ```
-$ npx parcel watch --out-dir public/packs --public-url /packs app/javascript/packs/application.js
+$ npx parcel watch --out-dir public/packs --public-url /packs app/javascript/application.js
 ```
 
 It works!

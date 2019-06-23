@@ -14,10 +14,6 @@
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./app/javascript/src/*"]
-    }
+    "noImplicitThis": true
   }
 }

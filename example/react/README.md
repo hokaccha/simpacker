@@ -1,4 +1,4 @@
-# Simpacker: react example
+# Simpacker react example
 
 ## Install simpacker
 
@@ -14,8 +14,21 @@ $ npm install --save-dev @types/react @types/react-dom
 ## Change the `webpack.config.js`
 
 ```diff
--    application: path.resolve(__dirname, "app/javascript/packs/application.ts")
-+    application: path.resolve(__dirname, "app/javascript/packs/application.tsx")
+   entry: {
+-    application: path.resolve(__dirname, "app/javascript/application.ts")
++    application: path.resolve(__dirname, "app/javascript/application.tsx")
+   },
+   output: {
+     path: path.resolve(__dirname, "public/packs"),
+@@ -17,7 +17,7 @@
+     chunkFilename: "[id]-[chunkhash].js"
+   },
+   resolve: {
+-    extensions: [".js", ".ts"]
++    extensions: [".js", ".ts", ".jsx", ".tsx"]
+   },
+   module: {
+     rules: [
 ```
 
 ## Change the `tsconfig.json`
@@ -33,8 +46,8 @@ $ npm install --save-dev @types/react @types/react-dom
 ## Rename and change scripts
 
 ```
-$ mv app/javascript/packs/application.{ts,tsx}
-$ mv app/javascript/src/greeter.{ts,tsx}
+$ mv app/javascript/application.{ts,tsx}
+$ mv app/javascript/greeter.{ts,tsx}
 ```
 
 ### app/javascript/packs/application.tsx
@@ -42,7 +55,7 @@ $ mv app/javascript/src/greeter.{ts,tsx}
 ```typescript
 import React from "react";
 import ReactDOM from "react-dom";
-import { Hello } from "~/greeter";
+import { Hello } from "./greeter";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Hello name="Rails" />, document.getElementById("app"));

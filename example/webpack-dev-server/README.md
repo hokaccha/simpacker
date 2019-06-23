@@ -1,4 +1,4 @@
-# Simpacker: webpack-dev-server example
+# Simpacker webpack-dev-server example
 
 ## Install simpacker
 
