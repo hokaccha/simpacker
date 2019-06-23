@@ -1,7 +1,7 @@
 require "simpacker/configuration"
 require "simpacker/manifest"
 require "simpacker/helper"
-require "simpacker/railtie" if defined?(Rails)
+require "simpacker/railtie"
 
 module Simpacker
   def self.config
