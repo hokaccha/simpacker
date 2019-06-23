@@ -34,6 +34,19 @@ Run the folloing command to build JavaScript.
 $ npx wabpack --watch
 ```
 
+## Integrations
+
+See [examples](https://github.com/hokaccha/simpacker/tree/master/example).
+
+## Deployment
+
+Simpacker does not provide feature for deployment. Just run the following command at deployment.
+
+```
+$ npm install
+$ NODE_ENV=production npx webpack
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hokaccha/simpacker.
