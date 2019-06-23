@@ -1,6 +1,6 @@
 # Simpacker
 
-Yet another [webpacker](https://github.com/rails/webpacker).
+Simpacker provides the feature to integrate modern JavaScript build system with Rails, like a [webpacker](https://github.com/rails/webpacker).
 
 ## Installation
 
