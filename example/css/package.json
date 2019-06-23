@@ -1,0 +1,14 @@
+{
+  "name": "example_app",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.0",
+    "webpack-assets-manifest": "^3.1.1",
+    "webpack-cli": "^3.3.4"
+  }
+}
