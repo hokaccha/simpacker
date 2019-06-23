@@ -2,14 +2,14 @@ module Simpacker
   module Helper
     def javascript_pack_tag(*names, **options)
       sources = names.map do |name|
-        Simpacker.manifest.lookup!("#{name}#{compute_asset_extname(name, type: :javascript)}")
+        Simpacker.manifest.lookup!("#{name}#{compute_asset_extname(name.to_s, type: :javascript)}")
       end
       javascript_include_tag(*sources, **options)
     end
 
     def stylesheet_pack_tag(*names, **options)
       sources = names.map do |name|
-        Simpacker.manifest.lookup!("#{name}#{compute_asset_extname(name, type: :stylesheet)}")
+        Simpacker.manifest.lookup!("#{name}#{compute_asset_extname(name.to_s, type: :stylesheet)}")
       end
       stylesheet_link_tag(*sources, **options)
     end
