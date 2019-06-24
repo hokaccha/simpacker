@@ -19,9 +19,8 @@ $ npm install --save-dev @types/react @types/react-dom
 +    application: path.resolve(__dirname, "app/javascript/application.tsx")
    },
    output: {
-     path: path.resolve(__dirname, "public/packs"),
+     path: path.resolve(__dirname, "public/packs")
 @@ -17,7 +17,7 @@
-     chunkFilename: "[id]-[chunkhash].js"
    },
    resolve: {
 -    extensions: [".js", ".ts"]

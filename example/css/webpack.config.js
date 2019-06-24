@@ -14,8 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js",
-    chunkFilename: "[id]-[chunkhash].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js"
   },
   resolve: {
     extensions: [".js", ".ts"]
@@ -43,8 +42,7 @@ module.exports = {
   plugins: [
     new WebpackAssetsManifest({ publicPath: true }),
     new MiniCssExtractPlugin({
-      filename: isProd ? "[name]-[hash].css" : "[name].css",
-      chunkFilename: "[id]-[chunkhash].css"
+      filename: isProd ? "[name]-[hash].css" : "[name].css"
     })
   ]
 };

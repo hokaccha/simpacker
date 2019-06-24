@@ -19,8 +19,7 @@ $ npm install --save-dev webpack-dev-server
      path: path.resolve(__dirname, "public/packs"),
 -    publicPath: "/packs/",
 +    publicPath: isProd ? "/packs/" : "//localhost:8081/packs/",
-     filename: isProd ? "[name]-[hash].js" : "[name].js",
-     chunkFilename: "[id]-[chunkhash].js"
+     filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
 @@ -33,5 +33,11 @@
        }

@@ -33,8 +33,7 @@ $ npm install --save-dev css-loader mini-css-extract-plugin
 +  plugins: [
 +    new WebpackAssetsManifest({ publicPath: true }),
 +    new MiniCssExtractPlugin({
-+      filename: isProd ? "[name]-[hash].css" : "[name].css",
-+      chunkFilename: "[id]-[chunkhash].css"
++      filename: isProd ? "[name]-[hash].css" : "[name].css"
 +    })
 +  ]
  };
