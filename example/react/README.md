@@ -76,6 +76,34 @@ export const Hello: FC<Props> = ({ name }) => {
 };
 ```
 
+Setup for React is now complete! Next section is for people who want to use styled-component additionally.
+
+## styled-components
+
+```
+$ npm install --save styled-components
+$ npm install --save-dev @types/styled-components
+```
+
+```diff
+ // app/javascript/greeter.tsx
+ import React, { FC } from "react";
++import styled from "styled-components";
+
+ interface Props {
+   name: string;
+ }
+
++const Message = styled.div`
++  color: tomato;
++`;
++
+ export const Hello: FC<Props> = ({ name }) => {
+-  return <div>Hello {name}!</div>;
++  return <Message>Hello {name}!</Message>;
+ };
+```
+
 ## Run
 
 ```

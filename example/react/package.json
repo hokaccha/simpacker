@@ -3,11 +3,13 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.16",
     "ts-loader": "^6.0.3",
     "typescript": "^3.5.2",
     "webpack": "^4.35.0",
