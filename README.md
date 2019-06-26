@@ -31,7 +31,7 @@ Add `javascript_pack_tag` in view.
 Run the folloing command to build JavaScript.
 
 ```
-$ npx wabpack --watch
+$ npx webpack --watch
 ```
 
 ## Integrations
