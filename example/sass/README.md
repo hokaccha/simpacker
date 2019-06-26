@@ -1,4 +1,4 @@
-# Simpacker scss example
+# Simpacker sass example
 
 ```
 $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugin
