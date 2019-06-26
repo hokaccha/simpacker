@@ -1,7 +1,7 @@
-# Simpacker css example
+# Simpacker scss example
 
 ```
-$ npm install --save-dev css-loader mini-css-extract-plugin
+$ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugin
 ```
 
 ## Edit webpack.config.js
@@ -19,13 +19,8 @@ $ npm install --save-dev css-loader mini-css-extract-plugin
          }
 +      },
 +      {
-+        test: /\.css$/,
-+        use: [
-+          {
-+            loader: MiniCssExtractPlugin.loader
-+          },
-+          "css-loader"
-+        ]
++        test: loader: /\.scss$/,
++        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
        }
      ]
    },
@@ -45,14 +40,16 @@ $ npm install --save-dev css-loader mini-css-extract-plugin
 
 ```diff
  import { hello } from "./greeter";
-+import "./application.css";
++import "./application.scss";
 ```
 
-### app/javascript/application.css
+### app/javascript/application.scss
 
-```css
+```scss
+$main-color: tomato;
+
 body {
-  color: tomato;
+  color: $main-color;
 }
 ```
 
