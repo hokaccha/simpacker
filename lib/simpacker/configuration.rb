@@ -4,8 +4,8 @@ module Simpacker
   class Configuration
     attr_accessor :root_path, :config_path, :env
 
-    def initialize
-      @root_path = Rails.root
+    def initialize(root_path:)
+      @root_path = root_path
       @config_path = @root_path.join("config/simpacker.yml")
       @env = Rails.env
     end

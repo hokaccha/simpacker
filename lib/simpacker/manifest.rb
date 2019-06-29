@@ -2,10 +2,10 @@ module Simpacker
   class Manifest
     class MissingEntryError < StandardError; end
 
-    attr_reader :config
+    attr_reader :context
 
-    def initialize(config)
-      @config = config
+    def initialize(context)
+      @context = context
     end
 
     def lookup(name)
@@ -23,7 +23,7 @@ module Simpacker
     end
 
     def data
-      if config.cache_manifest?
+      if context.config.cache_manifest?
         @data ||= load
       else
         load
@@ -31,8 +31,8 @@ module Simpacker
     end
 
     def load
-      if config.manifest_path.exist?
-        JSON.parse(config.manifest_path.read)
+      if context.config.manifest_path.exist?
+        JSON.parse(context.config.manifest_path.read)
       else
         {}
       end
