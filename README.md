@@ -1,5 +1,7 @@
 # Simpacker
 
+[![Build Status](https://travis-ci.org/hokaccha/simpacker.svg?branch=master)](https://travis-ci.org/hokaccha/simpacker) [![Gem Version](https://badge.fury.io/rb/simpacker.svg)](https://badge.fury.io/rb/simpacker)
+
 Simpacker provides the feature to integrate modern JavaScript build system with Rails, like a [webpacker](https://github.com/rails/webpacker).
 
 ## Installation
