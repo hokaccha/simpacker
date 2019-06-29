@@ -39,7 +39,5 @@ $ npm install --save-dev webpack-dev-server
 ## Run `webpack-dev-server`
 
 ```
-$ npx webpack-dev-server
+$ ./node_modules/.bin/webpack-dev-server
 ```
-
-It works!

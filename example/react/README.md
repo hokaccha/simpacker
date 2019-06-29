@@ -103,11 +103,3 @@ $ npm install --save-dev @types/styled-components
 +  return <Message>Hello {name}!</Message>;
  };
 ```
-
-## Run
-
-```
-$ npx webpack
-```
-
-It works!

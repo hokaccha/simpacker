@@ -56,7 +56,5 @@ export function hello(name) {
 ## Run parcel
 
 ```
-$ npx parcel watch --out-dir public/packs --public-url /packs app/javascript/application.js
+$ ./node_modules/.bin/parcel watch --out-dir public/packs --public-url /packs app/javascript/application.js
 ```
-
-It works!

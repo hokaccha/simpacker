@@ -31,7 +31,7 @@ Add `javascript_pack_tag` in view.
 Run the folloing command to build JavaScript.
 
 ```
-$ npx wabpack --watch
+$ ./node_modules/.bin/wabpack --watch
 ```
 
 ## Integrations
@@ -44,7 +44,7 @@ Simpacker does not provide feature for deployment. Just run the following comman
 
 ```
 $ npm install
-$ NODE_ENV=production npx webpack
+$ NODE_ENV=production ./node_modules/.bin/webpack
 ```
 
 ## Contributing

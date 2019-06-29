@@ -57,11 +57,3 @@ export class AppComponent {
   name = "Rails";
 }
 ```
-
-## Run
-
-```
-$ npx webpack
-```
-
-It works!
