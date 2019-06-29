@@ -59,11 +59,3 @@ body {
 +    <%= stylesheet_pack_tag 'application' %>
      <%= javascript_pack_tag 'application' %>
 ```
-
-## Run
-
-```
-$ npx webpack
-```
-
-It works!
