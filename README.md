@@ -36,9 +36,22 @@ Run the folloing command to build JavaScript.
 $ ./node_modules/.bin/wabpack --watch
 ```
 
-## Integrations
+## Examples
 
-See [examples](https://github.com/hokaccha/simpacker/tree/master/example).
+- Webpack settings
+  - [webpack-dev-server](https://github.com/hokaccha/simpacker/tree/master/example/webpack-dev-server)
+  - [Multiple Entry Point](https://github.com/hokaccha/simpacker/tree/master/example/multiple-entry-points)
+- Languages
+  - [TypeScript](https://github.com/hokaccha/simpacker/tree/master/example/typescript)
+  - [Babel](https://github.com/hokaccha/simpacker/tree/master/example/babel)
+  - [Sass](https://github.com/hokaccha/simpacker/tree/master/example/sass)
+- Frameworks
+  - [React](https://github.com/hokaccha/simpacker/tree/master/example/react)
+  - [Vue.js](https://github.com/hokaccha/simpacker/tree/master/example/vue)
+  - [Angular](https://github.com/hokaccha/simpacker/tree/master/example/angular)
+- Others
+  - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
+  - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
 
 ## Deployment
 
