@@ -49,6 +49,9 @@ $ ./node_modules/.bin/wabpack --watch
   - [React](https://github.com/hokaccha/simpacker/tree/master/example/react)
   - [Vue.js](https://github.com/hokaccha/simpacker/tree/master/example/vue)
   - [Angular](https://github.com/hokaccha/simpacker/tree/master/example/angular)
+- Deployment
+  - [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host)
+  - [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
 - Others
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
@@ -61,6 +64,8 @@ Simpacker does not provide feature for deployment. Just run the following comman
 $ npm install
 $ NODE_ENV=production ./node_modules/.bin/webpack
 ```
+
+See also: [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host), [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
 
 ## Contributing
 
