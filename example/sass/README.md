@@ -19,7 +19,7 @@ $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugi
          }
 +      },
 +      {
-+        test: loader: /\.scss$/,
++        test: /\.scss$/,
 +        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
        }
      ]
