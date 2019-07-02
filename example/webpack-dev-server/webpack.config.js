@@ -33,7 +33,10 @@ module.exports = {
     contentBase: path.resolve(__dirname, "public"),
     publicPath: "/packs/",
     host: "localhost",
-    port: 8081
+    port: 8081,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })]
 };
