@@ -57,6 +57,14 @@ $ ./node_modules/.bin/wabpack --watch
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
 
+## VS. Webpacker
+
+Webpacker is a great product that you can easily use webpack without knowing it. It also provides many useful features. The difficulty with Webpacker is that you need to configure webpack via webpacker's own DSL and webpacker.yml. If you know how to configure webpack, you need to convert it to webpacker configuration. I want to edit webpack.config.js directly!
+
+Simpacker provides only minimal features that lookup the manifest.json output by webpack and a create script tag through javascript_pack_tag. You need to know about webpack, but there is little to know about Simpacker.
+
+However, some useful features of Webpacker, such as yarn integrity and compilation on request, are not available in Simpacker.
+
 ## Deployment
 
 Simpacker does not provide feature for deployment. Just run the following command at deployment.
