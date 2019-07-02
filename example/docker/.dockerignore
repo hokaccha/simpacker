@@ -1,0 +1,5 @@
+/.git
+/tmp
+/log
+/public/packs
+/node_modules

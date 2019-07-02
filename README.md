@@ -52,6 +52,7 @@ $ ./node_modules/.bin/wabpack --watch
 - Deployment
   - [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host)
   - [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
+  - [Docker](https://github.com/hokaccha/simpacker/tree/master/example/docker)
 - Others
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
@@ -65,7 +66,7 @@ $ npm install
 $ NODE_ENV=production ./node_modules/.bin/webpack
 ```
 
-See also: [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host), [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
+See also: [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host), [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku), [Docker](https://github.com/hokaccha/simpacker/tree/master/example/docker)
 
 ## Contributing
 
