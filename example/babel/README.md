@@ -37,6 +37,7 @@ $ npm install --save-dev babel-loader @babel/core @babel/preset-env
 -        options: {
 -          transpileOnly: true
 +        test: /\.m?js$/,
++        exclude: /node_modules/,
 +        use: {
 +          loader: "babel-loader",
 +          options: {
