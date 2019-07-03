@@ -1,52 +1,69 @@
 # Simpacker react example
 
-## Install simpacker
+NOTE: This example explains the introduction of React using TypeScript. If you don't use TypeScript, you should use [Babel](https://github.com/hokaccha/simpacker/tree/master/example/babel) and [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react).
 
-See https://github.com/hokaccha/simpacker#installation
-
-## Install react and react-dom
+## Install packages
 
 ```
 $ npm install --save react react-dom
-$ npm install --save-dev @types/react @types/react-dom
+$ npm install --save-dev typescript ts-loader @types/react @types/react-dom
 ```
 
-## Change the `webpack.config.js`
+## Edit webpack config
 
 ```diff
    entry: {
--    application: path.resolve(__dirname, "app/javascript/application.ts")
+-    application: path.resolve(__dirname, "app/javascript/application.js")
 +    application: path.resolve(__dirname, "app/javascript/application.tsx")
    },
    output: {
-     path: path.resolve(__dirname, "public/packs")
-@@ -17,7 +17,7 @@
+     path: path.resolve(__dirname, "public/packs"),
+@@ -16,7 +16,18 @@
+     filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
    resolve: {
--    extensions: [".js", ".ts"]
+-    extensions: [".js"]
 +    extensions: [".js", ".ts", ".jsx", ".tsx"]
++  },
++  module: {
++    rules: [
++      {
++        test: /\.tsx?$/,
++        loader: "ts-loader",
++        options: {
++          transpileOnly: true
++        }
++      }
++    ]
    },
-   module: {
-     rules: [
+   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+ };
 ```
 
-## Change the `tsconfig.json`
+## Add files
 
-```diff
-     "target": "es5",
-     "lib": ["es2019", "dom", "dom.iterable"],
-     "module": "es2015",
-+    "jsx": "react",
-     "moduleResolution": "node",
-     "esModuleInterop": true,
-     "downlevelIteration": true,
-```
+### tsconfig.json
 
-## Rename and change scripts
-
-```
-$ mv app/javascript/application.{ts,tsx}
-$ mv app/javascript/greeter.{ts,tsx}
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2019", "dom", "dom.iterable"],
+    "module": "es2015",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true
+  }
+}
 ```
 
 ### app/javascript/packs/application.tsx
@@ -59,7 +76,6 @@ import { Hello } from "./greeter";
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Hello name="Rails" />, document.getElementById("app"));
 });
-
 ```
 
 ### app/javascript/src/greeter.tsx

@@ -1,29 +1,22 @@
 # Simpacker webpack-dev-server example
 
-## Install simpacker
-
-See https://github.com/hokaccha/simpacker#installation
-
-## Install `webpack-dev-server`
+## Install packages
 
 ```
 $ npm install --save-dev webpack-dev-server
 ```
 
-## Change the `webpack.config.js`
+## Edit webpack config
 
 ```diff
-@@ -12,7 +12,7 @@
-   },
    output: {
      path: path.resolve(__dirname, "public/packs"),
 -    publicPath: "/packs/",
 +    publicPath: isProd ? "/packs/" : "//localhost:8081/packs/",
      filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
-@@ -33,5 +33,11 @@
-       }
-     ]
+   resolve: {
+     extensions: [".js"]
    },
 -  plugins: [new WebpackAssetsManifest({ publicPath: true })]
 +  devServer: {
@@ -32,14 +25,14 @@ $ npm install --save-dev webpack-dev-server
 +    host: "localhost",
 +    port: 8081,
 +    headers: {
-+       "Access-Control-Allow-Origin": "*"
++      "Access-Control-Allow-Origin": "*"
 +    }
 +  },
 +  plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })]
  };
 ```
 
-## Run `webpack-dev-server`
+## Run
 
 ```
 $ ./node_modules/.bin/webpack-dev-server

@@ -1,10 +1,12 @@
 # Simpacker sass example
 
+## Install packages
+
 ```
 $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugin
 ```
 
-## Edit webpack.config.js
+## Edit webpack config
 
 ```diff
  const path = require("path");
@@ -13,18 +15,19 @@ $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugi
 
  const { NODE_ENV } = process.env;
  const isProd = NODE_ENV === "production";
-@@ -27,8 +28,23 @@
-         options: {
-           transpileOnly: true
-         }
-+      },
+@@ -18,5 +19,18 @@
+   resolve: {
+     extensions: [".js"]
+   },
+-  plugins: [new WebpackAssetsManifest({ publicPath: true })]
++  module: {
++    rules: [
 +      {
 +        test: /\.scss$/,
 +        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-       }
-     ]
-   },
--  plugins: [new WebpackAssetsManifest({ publicPath: true })]
++      }
++    ]
++  },
 +  plugins: [
 +    new WebpackAssetsManifest({ publicPath: true }),
 +    new MiniCssExtractPlugin({
@@ -36,7 +39,7 @@ $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugi
 
 ## Edit scripts
 
-### app/javascript/application.ts
+### app/javascript/application.js
 
 ```diff
  import { hello } from "./greeter";

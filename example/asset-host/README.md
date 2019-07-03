@@ -13,15 +13,16 @@ In Simpacker, this setting is used for `javascript_pack_tag` and` stylesheet_pac
      filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
    resolve: {
-@@ -26,6 +28,10 @@
-         options: {
-           transpileOnly: true
-         }
-+      },
+     extensions: [".js"]
+   },
++  module: {
++    rules: [
 +      {
 +        test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
 +        use: "file-loader"
-       }
-     ]
-   },
++      }
++    ]
++  },
+   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+ };
 ```

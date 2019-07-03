@@ -1,41 +1,20 @@
 # Simpacker APP_NAME example
 
-## Install simpacker
-
-See https://github.com/hokaccha/simpacker#installation
-
 ## Install packages
 
 ```
-$ npm uninstall --save-dev ts-loader typescript
 $ npm install --save-dev babel-loader @babel/core @babel/preset-env
 ```
 
-## webpack.config.js
+## Edit webpack config
 
 ```diff
-   mode: isProd ? "production" : "development",
-   devtool: "source-map",
-   entry: {
--    application: path.resolve(__dirname, "app/javascript/application.ts")
-+    application: path.resolve(__dirname, "app/javascript/application.js")
-   },
-   output: {
-     path: path.resolve(__dirname, "public/packs"),
-@@ -16,15 +16,17 @@
-     filename: isProd ? "[name]-[hash].js" : "[name].js"
-   },
    resolve: {
--    extensions: [".js", ".ts"]
-+    extensions: [".js"]
+     extensions: [".js"]
    },
-   module: {
-     rules: [
-       {
--        test: /\.tsx?$/,
--        loader: "ts-loader",
--        options: {
--          transpileOnly: true
++  module: {
++    rules: [
++      {
 +        test: /\.m?js$/,
 +        exclude: /node_modules/,
 +        use: {
@@ -43,7 +22,10 @@ $ npm install --save-dev babel-loader @babel/core @babel/preset-env
 +          options: {
 +            presets: ["@babel/preset-env"]
 +          }
-         }
-       }
-     ]
++        }
++      }
++    ]
++  },
+   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+ };
 ```

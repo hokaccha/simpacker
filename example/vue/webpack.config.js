@@ -10,7 +10,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.ts")
+    application: path.resolve(__dirname, "app/javascript/application.js")
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -18,20 +18,13 @@ module.exports = {
     filename: isProd ? "[name]-[hash].js" : "[name].js"
   },
   resolve: {
-    extensions: [".js", ".ts", ".vue"],
+    extensions: [".js", ".vue"],
     alias: {
       vue$: "vue/dist/vue.esm.js"
     }
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: true
-        }
-      },
       {
         test: /\.vue$/,
         loader: "vue-loader"

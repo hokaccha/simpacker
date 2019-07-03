@@ -6,7 +6,7 @@
 FROM node:10-alpine as assets-builder
 RUN mkdir -p /app
 WORKDIR /app
-COPY package.json package-lock.json tsconfig.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 COPY webpack.config.js ./
 COPY app/javascript ./app/javascript

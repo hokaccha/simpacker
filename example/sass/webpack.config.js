@@ -9,7 +9,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.ts")
+    application: path.resolve(__dirname, "app/javascript/application.js")
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -17,17 +17,10 @@ module.exports = {
     filename: isProd ? "[name]-[hash].js" : "[name].js"
   },
   resolve: {
-    extensions: [".js", ".ts"]
+    extensions: [".js"]
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: true
-        }
-      },
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]

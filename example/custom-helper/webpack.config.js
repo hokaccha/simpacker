@@ -8,8 +8,8 @@ module.exports = {
   mode: isProd ? "production" : "development",
   // devtool: "source-map",
   entry: {
-    map: path.resolve(__dirname, "app/javascript/map.ts"),
-    calendar: path.resolve(__dirname, "app/javascript/calendar.ts")
+    map: path.resolve(__dirname, "app/javascript/map.js"),
+    calendar: path.resolve(__dirname, "app/javascript/calendar.js")
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -25,18 +25,7 @@ module.exports = {
     runtimeChunk: true
   },
   resolve: {
-    extensions: [".js", ".ts"]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: true
-        }
-      }
-    ]
+    extensions: [".js"]
   },
   plugins: [new WebpackAssetsManifest({ publicPath: true, entrypoints: true })]
 };
