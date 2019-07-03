@@ -1,4 +1,4 @@
-# README
+# Simpacker multiple entry points example
 
 This example will explain how to automatically compile all files below `app/javascript/packs` as entry points, like Webpacker.
 
