@@ -49,6 +49,7 @@ $ ./node_modules/.bin/wabpack --watch
   - [Sass](https://github.com/hokaccha/simpacker/tree/master/example/sass)
 - Frameworks
   - [React(TypeScript)](https://github.com/hokaccha/simpacker/tree/master/example/react-typescript)
+  - [React(Babel)](https://github.com/hokaccha/simpacker/tree/master/example/react-babel)
   - [Vue.js](https://github.com/hokaccha/simpacker/tree/master/example/vue)
   - [Angular](https://github.com/hokaccha/simpacker/tree/master/example/angular)
 - Deployment
