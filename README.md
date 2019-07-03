@@ -41,9 +41,11 @@ $ ./node_modules/.bin/wabpack --watch
 - Webpack settings
   - [webpack-dev-server](https://github.com/hokaccha/simpacker/tree/master/example/webpack-dev-server)
   - [Multiple Entry Point](https://github.com/hokaccha/simpacker/tree/master/example/multiple-entry-points)
-- Languages
+- Transpilers
   - [TypeScript](https://github.com/hokaccha/simpacker/tree/master/example/typescript)
   - [Babel](https://github.com/hokaccha/simpacker/tree/master/example/babel)
+- Style Sheets
+  - [CSS](https://github.com/hokaccha/simpacker/tree/master/example/css)
   - [Sass](https://github.com/hokaccha/simpacker/tree/master/example/sass)
 - Frameworks
   - [React](https://github.com/hokaccha/simpacker/tree/master/example/react)
@@ -53,9 +55,10 @@ $ ./node_modules/.bin/wabpack --watch
   - [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host)
   - [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
   - [Docker](https://github.com/hokaccha/simpacker/tree/master/example/docker)
-- Advansed settings
+- Advanced settings
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
   - [Custom helper](https://github.com/hokaccha/simpacker/tree/master/example/custom-helper)
+- Bundler
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
 
 ## VS. Webpacker
