@@ -1,4 +1,4 @@
-# Simpacker APP_NAME example
+# Simpacker Babel example
 
 ## Install packages
 
