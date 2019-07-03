@@ -9,7 +9,7 @@ module Simpacker
         manifest_path: root_path.join(data['manifest_path']),
         cache_manifest: data['cache_manifest'],
       )
-      @manifest = Simpacker::Manifest.new(self)
+      @manifest = Simpacker::Manifest.new(config)
     end
 
     private
