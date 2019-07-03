@@ -1,6 +1,7 @@
 module Simpacker
   class Manifest
     class MissingEntryError < StandardError; end
+    class MissingFileError < StandardError; end
 
     attr_reader :config
 
@@ -19,7 +20,7 @@ module Simpacker
     private
 
     def handle_missing_entry(names)
-      raise Simpacker::Manifest::MissingEntryError
+      raise Simpacker::Manifest::MissingEntryError, "Missing field: #{names.join('.')}"
     end
 
     def data
@@ -34,7 +35,7 @@ module Simpacker
       if config.manifest_path.exist? && config.manifest_path.file?
         JSON.parse(config.manifest_path.read)
       else
-        {}
+        raise Simpacker::Manifest::MissingFileError, "Missing manifest file: #{config.manifest_path}"
       end
     end
   end

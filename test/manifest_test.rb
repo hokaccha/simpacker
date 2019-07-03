@@ -43,4 +43,12 @@ class ManifestTest < Minitest::Test
       assert_nil @manifest.lookup!('x')
     end
   end
+
+  def test_missing_manifest_file_error
+    assert_raises Simpacker::Manifest::MissingFileError do
+      config = Simpacker::Configuration.new(manifest_path: Pathname.new('./manifest.json'))
+      manifest = Simpacker::Manifest.new(config)
+      manifest.lookup('foo')
+    end
+  end
 end
