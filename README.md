@@ -53,8 +53,9 @@ $ ./node_modules/.bin/wabpack --watch
   - [CDN](https://github.com/hokaccha/simpacker/tree/master/example/asset-host)
   - [Heroku](https://github.com/hokaccha/simpacker/tree/master/example/heroku)
   - [Docker](https://github.com/hokaccha/simpacker/tree/master/example/docker)
-- Others
+- Advansed settings
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
+  - [Custom helper](https://github.com/hokaccha/simpacker/tree/master/example/custom-helper)
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
 
 ## VS. Webpacker
