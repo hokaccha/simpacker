@@ -47,6 +47,7 @@ $ ./node_modules/.bin/wabpack --watch
 - Style Sheets
   - [CSS](https://github.com/hokaccha/simpacker/tree/master/example/css)
   - [Sass](https://github.com/hokaccha/simpacker/tree/master/example/sass)
+  - [PostCSS](https://github.com/hokaccha/simpacker/tree/master/example/postcss)
 - Frameworks
   - [React(TypeScript)](https://github.com/hokaccha/simpacker/tree/master/example/react-typescript)
   - [React(Babel)](https://github.com/hokaccha/simpacker/tree/master/example/react-babel)
