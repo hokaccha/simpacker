@@ -33,7 +33,7 @@ Add `javascript_pack_tag` in view.
 Run the folloing command to build JavaScript.
 
 ```
-$ ./node_modules/.bin/wabpack --watch
+$ ./node_modules/.bin/webpack --watch
 ```
 
 ## Examples
