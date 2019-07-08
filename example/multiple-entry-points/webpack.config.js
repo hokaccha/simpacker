@@ -6,7 +6,7 @@ const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
 
 const entries = {};
-glob.sync("app/javascript/packs/*.ts").forEach(filePath => {
+glob.sync("app/javascript/packs/*.js").forEach(filePath => {
   const name = path.basename(filePath, path.extname(filePath));
   entries[name] = path.resolve(__dirname, filePath);
 });
@@ -27,18 +27,7 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: [".js", ".ts"]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: true
-        }
-      }
-    ]
+    extensions: [".js"]
   },
   plugins: [new WebpackAssetsManifest({ publicPath: true })]
 };

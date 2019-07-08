@@ -1,35 +1,34 @@
-# Simpacker css example
+# Simpacker sass example
+
+## Install packages
 
 ```
 $ npm install --save-dev css-loader mini-css-extract-plugin
 ```
 
-## Edit webpack.config.js
+## Edit webpack config
 
 ```diff
+@@ -1,5 +1,6 @@
  const path = require("path");
  const WebpackAssetsManifest = require("webpack-assets-manifest");
 +const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
  const { NODE_ENV } = process.env;
  const isProd = NODE_ENV === "production";
-@@ -27,8 +28,23 @@
-         options: {
-           transpileOnly: true
-         }
-+      },
-+      {
-+        test: /\.css$/,
-+        use: [
-+          {
-+            loader: MiniCssExtractPlugin.loader
-+          },
-+          "css-loader"
-+        ]
-       }
-     ]
+@@ -18,5 +19,18 @@
+   resolve: {
+     extensions: [".js"]
    },
 -  plugins: [new WebpackAssetsManifest({ publicPath: true })]
++  module: {
++    rules: [
++      {
++        test: /\.css$/,
++        use: [MiniCssExtractPlugin.loader, "css-loader"]
++      }
++    ]
++  },
 +  plugins: [
 +    new WebpackAssetsManifest({ publicPath: true }),
 +    new MiniCssExtractPlugin({
@@ -41,7 +40,7 @@ $ npm install --save-dev css-loader mini-css-extract-plugin
 
 ## Edit scripts
 
-### app/javascript/application.ts
+### app/javascript/application.js
 
 ```diff
  import { hello } from "./greeter";
@@ -62,11 +61,3 @@ body {
 +    <%= stylesheet_pack_tag 'application' %>
      <%= javascript_pack_tag 'application' %>
 ```
-
-## Run
-
-```
-$ npx webpack
-```
-
-It works!

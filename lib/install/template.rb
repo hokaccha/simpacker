@@ -1,7 +1,6 @@
 puts "Copying config files"
 copy_file "#{__dir__}/config/simpacker.yml", "config/simpacker.yml"
 copy_file "#{__dir__}/root/webpack.config.js", "webpack.config.js"
-copy_file "#{__dir__}/root/tsconfig.json", "tsconfig.json"
 
 unless File.exist?('package.json')
   copy_file "#{__dir__}/root/package.json", "package.json"
@@ -24,8 +23,6 @@ dep_packages = %w(
   webpack
   webpack-cli
   webpack-assets-manifest
-  typescript
-  ts-loader
 ).join(' ')
 
 say "Installing npm packages"

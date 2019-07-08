@@ -1,4 +1,4 @@
-# README
+# Simpacker multiple entry points example
 
 This example will explain how to automatically compile all files below `app/javascript/packs` as entry points, like Webpacker.
 
@@ -7,13 +7,13 @@ First, change the directory structure as follows:
 ```
 app/javascript
 ├── packs
-│   ├── posts.ts
-│   └── users.ts
+│   ├── posts.js
+│   └── users.js
 └── src
-    └── greeter.ts
+    └── greeter.js
 ```
 
-`posts.ts` and` users.ts` are compiled and called from another view.
+`posts.js` and` users.js` are compiled and called from another view.
 
 ```erb
 <!-- app/views/posts/index.html.erb -->
@@ -40,7 +40,7 @@ $ npm install --save-dev glob
  const isProd = NODE_ENV === "production";
 
 +const entries = {};
-+glob.sync("app/javascript/packs/*.ts").forEach(filePath => {
++glob.sync("app/javascript/packs/*.js").forEach(filePath => {
 +  const name = path.basename(filePath, path.extname(filePath));
 +  entries[name] = path.resolve(__dirname, filePath);
 +});
@@ -49,7 +49,7 @@ $ npm install --save-dev glob
    mode: isProd ? "production" : "development",
    devtool: "source-map",
 -  entry: {
--    application: path.resolve(__dirname, "app/javascript/application.ts")
+-    application: path.resolve(__dirname, "app/javascript/application.js")
 -  },
 +  entry: entries,
    output: {
@@ -58,7 +58,7 @@ $ npm install --save-dev glob
      filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
    resolve: {
-     extensions: [".js", ".ts"]
+     extensions: [".js"]
    },
 ```
 
@@ -66,10 +66,10 @@ $ npm install --save-dev glob
 
 We recommend using [optimization.splitChunks] (https://webpack.js.org/plugins/split-chunks-plugin/) when using multiple endpoints.
 
-For example, if you use jQuery in both `posts.ts` and` users.ts`, jQuery will be bundled in each file.
+For example, if you use jQuery in both `posts.js` and` users.js`, jQuery will be bundled in each file.
 
-```typescript
-// posts.ts
+```javascript
+// posts.js
 import $ from "jquery";
 import { hello } from "../src/greeter";
 
@@ -78,8 +78,8 @@ $(() => {
 });
 ```
 
-```typescript
-// users.ts
+```javascript
+// users.js
 import $ from "jquery";
 import { hello } from "../src/greeter";
 

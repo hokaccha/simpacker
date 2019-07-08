@@ -1,0 +1,14 @@
+default: &default
+  manifest_path: public/packs/my_engine/manifest.json
+
+development:
+  <<: *default
+  cache_manifest: false
+
+test:
+  <<: *default
+  cache_manifest: false
+
+production:
+  <<: *default
+  cache_manifest: true

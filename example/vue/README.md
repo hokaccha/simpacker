@@ -1,8 +1,4 @@
-# Simpacker vue example
-
-## Install simpacker
-
-See https://github.com/hokaccha/simpacker#installation
+# Simpacker Vue example
 
 ## Install packages
 
@@ -11,7 +7,7 @@ $ npm install --save vue
 $ npm install --save-dev vue-loader vue-template-compiler css-loader mini-css-extract-plugin
 ```
 
-## webpack.config.js
+## Edit webpack config
 
 ```diff
  const path = require("path");
@@ -21,23 +17,19 @@ $ npm install --save-dev vue-loader vue-template-compiler css-loader mini-css-ex
 
  const { NODE_ENV } = process.env;
  const isProd = NODE_ENV === "production";
-@@ -16,7 +18,10 @@
+@@ -16,7 +18,28 @@
      filename: isProd ? "[name]-[hash].js" : "[name].js"
    },
    resolve: {
--    extensions: [".js", ".ts"]
-+    extensions: [".js", ".ts", ".vue"],
+-    extensions: [".js"]
++    extensions: [".js", ".vue"],
 +    alias: {
 +      vue$: "vue/dist/vue.esm.js"
 +    }
    },
-   module: {
-     rules: [
-@@ -26,8 +31,22 @@
-         options: {
-           transpileOnly: true
-         }
-+      },
+-  plugins: [new WebpackAssetsManifest({ publicPath: true })]
++  module: {
++    rules: [
 +      {
 +        test: /\.vue$/,
 +        loader: "vue-loader"
@@ -45,10 +37,9 @@ $ npm install --save-dev vue-loader vue-template-compiler css-loader mini-css-ex
 +      {
 +        test: /\.css$/,
 +        use: [MiniCssExtractPlugin.loader, "css-loader"]
-       }
-     ]
-   },
--  plugins: [new WebpackAssetsManifest({ publicPath: true })]
++      }
++    ]
++  },
 +  plugins: [
 +    new VueLoaderPlugin(),
 +    new WebpackAssetsManifest({ publicPath: true }),
@@ -61,15 +52,6 @@ $ npm install --save-dev vue-loader vue-template-compiler css-loader mini-css-ex
 
 ## Add and change files
 
-### types/vue-shim.d.ts
-
-```typescript
-declare module "*.vue" {
-  import Vue from "vue";
-  export default Vue;
-}
-```
-
 ### app/javascript/Hello.vue
 
 ```html
@@ -77,7 +59,7 @@ declare module "*.vue" {
   <div>Hello {{name}}!</div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   props: ['name']
 }
@@ -90,9 +72,9 @@ div {
 </style>
 ```
 
-### app/javascript/application.ts
+### app/javascript/application.js
 
-```typescript
+```javascript
 import Hello from "./Hello.vue";
 import Vue from "vue";
 
@@ -111,11 +93,3 @@ document.addEventListener("DOMContentLoaded", () => {
 +    <%= stylesheet_pack_tag 'application' %>
      <%= javascript_pack_tag 'application' %>
 ```
-
-## Run
-
-```
-$ npx webpack
-```
-
-It works!
