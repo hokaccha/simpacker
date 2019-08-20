@@ -9,7 +9,7 @@ Simpacker provides the feature to integrate modern JavaScript build system with 
 Create a new rails application without webpacker.
 
 ```
-$ rails new myapp
+$ rails new myapp --skip-webpack-install --skip-javascript
 ```
 
 Add this line to your application's Gemfile:
