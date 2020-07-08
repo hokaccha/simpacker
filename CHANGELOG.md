@@ -1,3 +1,7 @@
+## v1.1.1
+
+- Fix deprecation warnings for Ruby 2.7 keyword arguments
+
 ## v1.1.0
 
 - Allow `Manifest#lookup` to access nested fields.
