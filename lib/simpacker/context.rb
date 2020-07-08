@@ -8,7 +8,7 @@ module Simpacker
 
     def initialize(root_path: Rails.root, env: Rails.env)
       config = load_config_file(root_path, env)
-      @config = Simpacker::Configuration.new(config)
+      @config = Simpacker::Configuration.new(**config)
       @manifest = Simpacker::Manifest.new(@config)
     end
 
