@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "format": "prettier --list-different --write '**/*.{js,ts,jsx,tsx}'"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
