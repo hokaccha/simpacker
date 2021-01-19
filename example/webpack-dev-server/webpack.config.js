@@ -8,15 +8,15 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.js")
+    application: path.resolve(__dirname, "app/javascript/application.js"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: isProd ? "/packs/" : "//localhost:8081/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js"],
   },
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
@@ -24,8 +24,8 @@ module.exports = {
     host: "localhost",
     port: 8081,
     headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
+      "Access-Control-Allow-Origin": "*",
+    },
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })]
+  plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })],
 };

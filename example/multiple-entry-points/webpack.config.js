@@ -6,7 +6,7 @@ const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
 
 const entries = {};
-glob.sync("app/javascript/packs/*.js").forEach(filePath => {
+glob.sync("app/javascript/packs/*.js").forEach((filePath) => {
   const name = path.basename(filePath, path.extname(filePath));
   entries[name] = path.resolve(__dirname, filePath);
 });
@@ -18,16 +18,16 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   optimization: {
     splitChunks: {
       name: "vendor",
-      chunks: "initial"
-    }
+      chunks: "initial",
+    },
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js"],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true })]
+  plugins: [new WebpackAssetsManifest({ publicPath: true })],
 };

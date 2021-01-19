@@ -10,36 +10,36 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.js")
+    application: path.resolve(__dirname, "app/javascript/application.js"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   resolve: {
     extensions: [".js", ".vue"],
     alias: {
-      vue$: "vue/dist/vue.esm.js"
-    }
+      vue$: "vue/dist/vue.esm.js",
+    },
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: "vue-loader",
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
     new WebpackAssetsManifest({ publicPath: true }),
     new MiniCssExtractPlugin({
-      filename: isProd ? "[name]-[hash].css" : "[name].css"
-    })
-  ]
+      filename: isProd ? "[name]-[hash].css" : "[name].css",
+    }),
+  ],
 };

@@ -8,15 +8,15 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.tsx")
+    application: path.resolve(__dirname, "app/javascript/application.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   resolve: {
-    extensions: [".js", ".ts", ".jsx", ".tsx"]
+    extensions: [".js", ".ts", ".jsx", ".tsx"],
   },
   module: {
     rules: [
@@ -24,10 +24,10 @@ module.exports = {
         test: /\.tsx?$/,
         loader: "ts-loader",
         options: {
-          transpileOnly: true
-        }
-      }
-    ]
+          transpileOnly: true,
+        },
+      },
+    ],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true })]
+  plugins: [new WebpackAssetsManifest({ publicPath: true })],
 };

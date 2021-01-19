@@ -9,15 +9,15 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    application: path.resolve(__dirname, "app/javascript/application.js")
+    application: path.resolve(__dirname, "app/javascript/application.js"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: isProd ? "[name]-[hash].js" : "[name].js"
+    filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js"],
   },
   module: {
     rules: [
@@ -29,17 +29,17 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: loader => [require("postcss-preset-env")()]
-            }
-          }
-        ]
-      }
-    ]
+              plugins: (loader) => [require("postcss-preset-env")()],
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new WebpackAssetsManifest({ publicPath: true }),
     new MiniCssExtractPlugin({
-      filename: isProd ? "[name]-[hash].css" : "[name].css"
-    })
-  ]
+      filename: isProd ? "[name]-[hash].css" : "[name].css",
+    }),
+  ],
 };

@@ -9,23 +9,23 @@ module.exports = {
   // devtool: "source-map",
   entry: {
     map: path.resolve(__dirname, "app/javascript/map.js"),
-    calendar: path.resolve(__dirname, "app/javascript/calendar.js")
+    calendar: path.resolve(__dirname, "app/javascript/calendar.js"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
     publicPath: "/packs/",
-    filename: "[name]-[hash].js"
+    filename: "[name]-[hash].js",
   },
   optimization: {
     splitChunks: {
       name: "vendor",
       chunks: "all",
-      minSize: 0
+      minSize: 0,
     },
-    runtimeChunk: true
+    runtimeChunk: true,
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js"],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true, entrypoints: true })]
+  plugins: [new WebpackAssetsManifest({ publicPath: true, entrypoints: true })],
 };
