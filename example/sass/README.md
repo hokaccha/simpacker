@@ -19,7 +19,6 @@ $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugi
    resolve: {
      extensions: [".js"]
    },
--  plugins: [new WebpackAssetsManifest({ publicPath: true })]
 +  module: {
 +    rules: [
 +      {
@@ -28,12 +27,15 @@ $ npm install --save-dev node-sass sass-loader css-loader mini-css-extract-plugi
 +      }
 +    ]
 +  },
-+  plugins: [
-+    new WebpackAssetsManifest({ publicPath: true }),
+   plugins: [
+     new WebpackAssetsManifest({
+       publicPath: true,
+       output: "manifest.json",
+     }),
 +    new MiniCssExtractPlugin({
-+      filename: isProd ? "[name]-[hash].css" : "[name].css"
-+    })
-+  ]
++      filename: isProd ? "[name]-[hash].css" : "[name].css",
++    }),
+   ],
  };
 ```
 

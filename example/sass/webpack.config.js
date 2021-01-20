@@ -28,7 +28,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new WebpackAssetsManifest({ publicPath: true }),
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
     new MiniCssExtractPlugin({
       filename: isProd ? "[name]-[hash].css" : "[name].css",
     }),
