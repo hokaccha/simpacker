@@ -34,7 +34,7 @@ $ npm install --save-dev typescript ts-loader @types/react @types/react-dom
 +      }
 +    ]
    },
-   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+   plugins: [
  };
 ```
 

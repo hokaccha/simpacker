@@ -29,5 +29,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true })],
+  plugins: [
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
+  ],
 };
