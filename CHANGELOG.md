@@ -1,3 +1,7 @@
+## v1.1.2
+
+- Set output option to manifest.json in webpack.config.js
+
 ## v1.1.1
 
 - Fix deprecation warnings for Ruby 2.7 keyword arguments
