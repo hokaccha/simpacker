@@ -39,7 +39,7 @@ $ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/prese
 +      }
 +    ]
    },
-   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+   plugins: [
  };
 ```
 
