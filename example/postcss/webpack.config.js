@@ -29,7 +29,9 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: (loader) => [require("postcss-preset-env")()],
+              postcssOptions: {
+                plugins: (loader) => [require("postcss-preset-env")()],
+              },
             },
           },
         ],
@@ -37,7 +39,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new WebpackAssetsManifest({ publicPath: true }),
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
     new MiniCssExtractPlugin({
       filename: isProd ? "[name]-[hash].css" : "[name].css",
     }),
