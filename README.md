@@ -41,6 +41,7 @@ $ ./node_modules/.bin/webpack --watch
 - Webpack settings
   - [webpack-dev-server](https://github.com/hokaccha/simpacker/tree/master/example/webpack-dev-server)
   - [Multiple Entry Point](https://github.com/hokaccha/simpacker/tree/master/example/multiple-entry-points)
+  - [Split Chunks](https://github.com/hokaccha/simpacker/tree/master/example/split-chunks)
 - Transpilers
   - [TypeScript](https://github.com/hokaccha/simpacker/tree/master/example/typescript)
   - [Babel](https://github.com/hokaccha/simpacker/tree/master/example/babel)
@@ -59,7 +60,6 @@ $ ./node_modules/.bin/webpack --watch
   - [Docker](https://github.com/hokaccha/simpacker/tree/master/example/docker)
 - Advanced settings
   - [Rails Engines](https://github.com/hokaccha/simpacker/tree/master/example/engines)
-  - [Custom helper](https://github.com/hokaccha/simpacker/tree/master/example/custom-helper)
 - Bundler
   - [Parcel](https://github.com/hokaccha/simpacker/tree/master/example/parcel)
 
