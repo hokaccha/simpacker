@@ -6,25 +6,29 @@ If you are using new webpack4 split chunks and webpack-assets-manifest entrypoin
 {
   "entrypoints": {
     "map": {
-      "js": [
-        "/packs/runtime~map-7050b45f89e39073dd17.js",
-        "/packs/vendor-7050b45f89e39073dd17.js",
-        "/packs/map-7050b45f89e39073dd17.js"
-      ]
+      "assets": {
+        "js": [
+          "/packs/runtime~map-302963ad04fc6a7b892b.js",
+          "/packs/vendor-302963ad04fc6a7b892b.js",
+          "/packs/map-302963ad04fc6a7b892b.js"
+        ]
+      }
     },
     "calendar": {
-      "js": [
-        "/packs/runtime~calendar-7050b45f89e39073dd17.js",
-        "/packs/vendor-7050b45f89e39073dd17.js",
-        "/packs/calendar-7050b45f89e39073dd17.js"
-      ]
+      "assets": {
+        "js": [
+          "/packs/runtime~calendar-302963ad04fc6a7b892b.js",
+          "/packs/vendor-302963ad04fc6a7b892b.js",
+          "/packs/calendar-302963ad04fc6a7b892b.js"
+        ]
+      }
     }
   },
-  "calendar.js": "/packs/calendar-7050b45f89e39073dd17.js",
-  "runtime~calendar.js": "/packs/runtime~calendar-7050b45f89e39073dd17.js",
-  "map.js": "/packs/map-7050b45f89e39073dd17.js",
-  "runtime~map.js": "/packs/runtime~map-7050b45f89e39073dd17.js",
-  "vendor.js": "/packs/vendor-7050b45f89e39073dd17.js"
+  "calendar.js": "/packs/calendar-302963ad04fc6a7b892b.js",
+  "map.js": "/packs/map-302963ad04fc6a7b892b.js",
+  "runtime~calendar.js": "/packs/runtime~calendar-302963ad04fc6a7b892b.js",
+  "runtime~map.js": "/packs/runtime~map-302963ad04fc6a7b892b.js",
+  "vendor.js": "/packs/vendor-302963ad04fc6a7b892b.js"
 }
 ```
 
@@ -33,7 +37,7 @@ In webpacker, you can use `javascript_packs_with_chunks_tag` to read the `entryp
 ```ruby
 module ApplicationHelper
   def javascript_packs_with_chunks_tag(*names, **options)
-    paths = names.flat_map{|name| simpacker_context.manifest.lookup!("entrypoints", name, "js") }.uniq
+    paths = names.flat_map{|name| simpacker_context.manifest.lookup!("entrypoints", name, "assets", "js") }.uniq
     javascript_include_tag(*paths, **options)
   end
 end
@@ -42,9 +46,9 @@ end
 ```erb
 <%= javascript_packs_with_chunks_tag 'calendar', 'map' %>
 
-<script src="/packs/runtime~calendar-275c176513bc321d9797.js"></script>
-<script src="/packs/vendor-275c176513bc321d9797.js"></script>
-<script src="/packs/calendar-275c176513bc321d9797.js"></script>
-<script src="/packs/runtime~map-275c176513bc321d9797.js"></script>
-<script src="/packs/map-275c176513bc321d9797.js"></script>
+<script src="/packs/runtime~calendar-302963ad04fc6a7b892b.js"></script>
+<script src="/packs/vendor-302963ad04fc6a7b892b.js"></script>
+<script src="/packs/calendar-302963ad04fc6a7b892b.js"></script>
+<script src="/packs/runtime~map-302963ad04fc6a7b892b.js"></script>
+<script src="/packs/map-302963ad04fc6a7b892b.js"></script>
 ```
