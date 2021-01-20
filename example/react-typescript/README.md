@@ -64,7 +64,7 @@ $ npm install --save-dev typescript ts-loader @types/react @types/react-dom
 }
 ```
 
-### app/javascript/packs/application.tsx
+### app/javascript/application.tsx
 
 ```typescript
 import React from "react";
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### app/javascript/src/greeter.tsx
+### app/javascript/greeter.tsx
 
 ```typescript
 import React, { FC } from "react";

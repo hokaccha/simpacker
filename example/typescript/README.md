@@ -3,7 +3,7 @@
 ## Install packages
 
 ```
-$ npm install --sav-dev typescript ts-loader
+$ npm install --save-dev typescript ts-loader
 ```
 
 ## Edit webpack config
