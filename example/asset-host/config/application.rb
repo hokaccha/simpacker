@@ -29,7 +29,5 @@ module ExampleApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.action_controller.asset_host = "assets.example.com:3000"
   end
 end

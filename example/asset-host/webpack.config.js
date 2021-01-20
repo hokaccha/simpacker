@@ -12,9 +12,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
-    publicPath: isProd
-      ? "https://hokaccha.s3-ap-northeast-1.amazonaws.com/simpacker/asset-host/packs/"
-      : "/packs/",
+    publicPath:
+      "https://hokaccha.s3-ap-northeast-1.amazonaws.com/simpacker/asset-host/packs/",
     filename: isProd ? "[name]-[hash].js" : "[name].js",
   },
   resolve: {
@@ -28,5 +27,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true })],
+  plugins: [
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
+  ],
 };

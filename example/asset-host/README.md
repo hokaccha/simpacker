@@ -23,6 +23,11 @@ In Simpacker, this setting is used for `javascript_pack_tag` and` stylesheet_pac
 +      }
 +    ]
 +  },
-   plugins: [new WebpackAssetsManifest({ publicPath: true })]
+  plugins: [
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
+  ],
  };
 ```
