@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "hello",
-  template: ` <div>Hello {{ name }}!</div> `,
+  template: "<div>Hello {{ name }}!</div>",
 })
 export class AppComponent {
   name = "Rails";
