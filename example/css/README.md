@@ -18,23 +18,25 @@ $ npm install --save-dev css-loader mini-css-extract-plugin
  const isProd = NODE_ENV === "production";
 @@ -18,5 +19,18 @@
    resolve: {
-     extensions: [".js"]
+     extensions: [".js"],
    },
--  plugins: [new WebpackAssetsManifest({ publicPath: true })]
 +  module: {
 +    rules: [
 +      {
 +        test: /\.css$/,
-+        use: [MiniCssExtractPlugin.loader, "css-loader"]
-+      }
-+    ]
++        use: [MiniCssExtractPlugin.loader, "css-loader"],
++      },
++    ],
 +  },
-+  plugins: [
-+    new WebpackAssetsManifest({ publicPath: true }),
+   plugins: [
+     new WebpackAssetsManifest({
+       publicPath: true,
+       output: "manifest.json",
+     }),
 +    new MiniCssExtractPlugin({
-+      filename: isProd ? "[name]-[hash].css" : "[name].css"
-+    })
-+  ]
++      filename: isProd ? "[name]-[hash].css" : "[name].css",
++    }),
+   ],
  };
 ```
 
