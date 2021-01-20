@@ -18,7 +18,6 @@ $ npm install --save-dev webpack-dev-server
    resolve: {
      extensions: [".js"]
    },
--  plugins: [new WebpackAssetsManifest({ publicPath: true })]
 +  devServer: {
 +    contentBase: path.resolve(__dirname, "public"),
 +    publicPath: "/packs/",
@@ -28,12 +27,18 @@ $ npm install --save-dev webpack-dev-server
 +      "Access-Control-Allow-Origin": "*"
 +    }
 +  },
-+  plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })]
+   plugins: [
+     new WebpackAssetsManifest({
+       publicPath: true,
+       output: "manifest.json",
++      writeToDisk: true,
+     }),
+   ],
  };
 ```
 
 ## Run
 
 ```
-$ ./node_modules/.bin/webpack-dev-server
+$ ./node_modules/.bin/webpack serve
 ```

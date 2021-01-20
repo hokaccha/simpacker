@@ -1,11 +1,14 @@
 {
   "name": "example_app",
   "private": true,
+  "scripts": {
+    "serve": "webpack serve"
+  },
   "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.35.0",
-    "webpack-assets-manifest": "^3.1.1",
-    "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.2"
+    "webpack": "^5.16.0",
+    "webpack-assets-manifest": "^5.0.1",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

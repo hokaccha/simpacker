@@ -27,5 +27,11 @@ module.exports = {
       "Access-Control-Allow-Origin": "*",
     },
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true, writeToDisk: true })],
+  plugins: [
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+      writeToDisk: true,
+    }),
+  ],
 };
