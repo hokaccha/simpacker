@@ -6,7 +6,7 @@ const isProd = NODE_ENV === "production";
 
 module.exports = {
   mode: isProd ? "production" : "development",
-  // devtool: "source-map",
+  devtool: "source-map",
   entry: {
     map: path.resolve(__dirname, "app/javascript/map.js"),
     calendar: path.resolve(__dirname, "app/javascript/calendar.js"),

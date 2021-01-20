@@ -1,6 +1,6 @@
-# Simpacker custom helepr example
+# Simpacker split chunks example
 
-If you are using new webpack4 split chunks and webpack-assets-manifest entrypoints, then webpack outputs the following `manifest.json`:
+If you are using webpack split chunks and webpack-assets-manifest entrypoints, then webpack outputs the following `manifest.json`:
 
 ```json
 {
@@ -45,7 +45,11 @@ end
 
 ```erb
 <%= javascript_packs_with_chunks_tag 'calendar', 'map' %>
+```
 
+This will output the following script tags.
+
+```html
 <script src="/packs/runtime~calendar-302963ad04fc6a7b892b.js"></script>
 <script src="/packs/vendor-302963ad04fc6a7b892b.js"></script>
 <script src="/packs/calendar-302963ad04fc6a7b892b.js"></script>
