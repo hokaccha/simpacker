@@ -29,5 +29,10 @@ module.exports = {
   resolve: {
     extensions: [".js"],
   },
-  plugins: [new WebpackAssetsManifest({ publicPath: true })],
+  plugins: [
+    new WebpackAssetsManifest({
+      publicPath: true,
+      output: "manifest.json",
+    }),
+  ],
 };
