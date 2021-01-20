@@ -3,8 +3,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-bundle-manifest": "^0.2.0",
-    "typescript": "^3.5.2"
+    "typescript": "^4.1.3"
   }
 }
