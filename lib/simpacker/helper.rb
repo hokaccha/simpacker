@@ -26,6 +26,14 @@ module Simpacker
       image_tag(asset_path(simpacker_context.manifest.lookup!(name)), **options)
     end
 
+    def image_pack_url(name, **options)
+      asset_url(simpacker_context.manifest.lookup!(name), **options)
+    end
+
+    def favicon_pack_tag(name, **options)
+      favicon_link_tag(asset_path(simpacker_context.manifest.lookup!(name)), **options)
+    end
+
     def simpacker_context
       Simpacker.default_context
     end
