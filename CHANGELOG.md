@@ -1,3 +1,7 @@
+## v1.2.0
+
+- Add image_pack_url, favicon_pack_tag to helpers #67
+
 ## v1.1.2
 
 - Set output option to manifest.json in webpack.config.js
