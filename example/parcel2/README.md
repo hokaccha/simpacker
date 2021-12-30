@@ -1,24 +1,61 @@
-# README
+# Simpacker parcel2 example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install packages
 
-Things you may want to cover:
+```
+$ npm install --save-dev parcel parcel-reporter-bundle-manifest
+```
 
-* Ruby version
+## Add files
 
-* System dependencies
+### config/simpacker.yml
 
-* Configuration
+```yaml
+default: &default
+  manifest_path: public/packs/parcel-manifest.json
 
-* Database creation
+development:
+  <<: *default
+  cache_manifest: false
 
-* Database initialization
+test:
+  <<: *default
+  cache_manifest: false
 
-* How to run the test suite
+production:
+  <<: *default
+  cache_manifest: true
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### app/javascript/application.js
 
-* Deployment instructions
+```javascript
+import { hello } from "./greeter";
 
-* ...
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("app");
+  if (el) {
+    el.textContent = hello("Rails");
+  }
+});
+```
+
+### app/javascript/greeter.js
+
+```javascript
+export function hello(name) {
+  return `Hello ${name}!`;
+}
+```
+
+### app/javascript/index.html
+
+```html
+<script src="./application.js"></script>
+```
+
+## Run parcel
+
+```
+$ ./node_modules/.bin/parcel serve --dist-dir public/packs --public-url /packs app/javascript/index.html
+```
