@@ -1,0 +1,12 @@
+{
+  "name": "simpacker-parcel2-example",
+  "private": true,
+  "scripts": {
+    "start": "parcel serve --dist-dir public/packs --public-url /packs app/javascript/index.html",
+    "build": "parcel build --dist-dir public/packs --public-url /packs app/javascript/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1",
+    "parcel-reporter-bundle-manifest": "^1.0.0"
+  }
+}
