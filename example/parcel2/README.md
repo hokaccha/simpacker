@@ -54,8 +54,14 @@ export function hello(name) {
 <script src="./application.js"></script>
 ```
 
+### .parcelrc
+
+Add `parcel-reporter-bundle-manifest` to `.parcelrc` in `reporters`.
+
+https://github.com/autifyhq/parcel-reporter-bundle-manifest#usage
+
 ## Run parcel
 
 ```
-$ ./node_modules/.bin/parcel serve --dist-dir public/packs --public-url /packs app/javascript/index.html
+$ ./node_modules/.bin/parcel --dist-dir public/packs --public-url /packs app/javascript/index.html
 ```
