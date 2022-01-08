@@ -1,3 +1,7 @@
+## v1.2.1
+
+- Support ruby 3.1 #70
+
 ## v1.2.0
 
 - Add image_pack_url, favicon_pack_tag to helpers #67
