@@ -16,7 +16,11 @@ module Simpacker
 
     def load_config_file(root_path, env)
       config_path = root_path.join("config/simpacker.yml")
-      yaml = YAML.load(config_path.read)
+      yaml = begin
+               YAML.load(config_path.read, aliases: true)
+             rescue ArgumentError
+               YAML.load(config_path.read)
+             end
       config_env = yaml.fetch(env.to_s)
       {
         manifest_path: root_path.join(config_env.fetch('manifest_path')),
