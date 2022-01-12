@@ -21,6 +21,6 @@ class HelperTest < ActionView::TestCase
   end
 
   def test_favicon_pack_tag
-    assert_equal '<link rel="shortcut icon" type="image/x-icon" href="/packs/images/favicon.ico" />', favicon_pack_tag('favicon.ico')
+    assert_equal '<link rel="icon" type="image/x-icon" href="/packs/images/favicon.ico" />', favicon_pack_tag('favicon.ico')
   end
 end
