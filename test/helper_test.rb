@@ -9,7 +9,7 @@ class HelperTest < ActionView::TestCase
   end
 
   def test_stylesheet_pack_tag
-    assert_equal '<link rel="stylesheet" media="screen" href="/packs/application.css" />', stylesheet_pack_tag('application')
+    assert_equal '<link rel="stylesheet" href="/packs/application.css" media="screen" />', stylesheet_pack_tag('application')
   end
 
   def test_image_pack_tag
