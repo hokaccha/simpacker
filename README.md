@@ -1,5 +1,6 @@
 # Simpacker
 
+[![CI](https://github.com/hokaccha/simpacker/actions/workflows/ci.yml/badge.svg)](https://github.com/hokaccha/simpacker/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/simpacker.svg)](https://badge.fury.io/rb/simpacker)
 
 Simpacker provides the feature to integrate modern JavaScript build system with Rails, like a [webpacker](https://github.com/rails/webpacker).
