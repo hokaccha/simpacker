@@ -17,7 +17,7 @@ class HelperTest < ActionView::TestCase
   end
 
   def test_image_pack_url
-    assert_equal '/packs/images/favicon.ico', image_pack_url('favicon.ico')
+    assert_equal 'http://test.host/packs/images/favicon.ico', image_pack_url('favicon.ico')
   end
 
   def test_favicon_pack_tag
