@@ -30,6 +30,16 @@ module Simpacker
       asset_url(simpacker_context.manifest.lookup!(name), **options)
     end
 
+    def picture_pack_tag(*names, &block)
+      unless Rails.gem_version >= Gem::Version.new('7.1.0')
+        raise NotImplementedError, '`picture_pack_tag` is only available for Rails 7.1 or above.'
+      end
+      names.flatten!
+      options = names.extract_options!
+      sources = names.map { |name| asset_path(simpacker_context.manifest.lookup!(name)) }
+      picture_tag(*sources, options, &block)
+    end
+
     def favicon_pack_tag(name, **options)
       favicon_link_tag(asset_path(simpacker_context.manifest.lookup!(name)), **options)
     end
