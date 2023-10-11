@@ -2,5 +2,6 @@
   "application.css": "/packs/application.css",
   "application.js": "/packs/application.js",
   "application.js.map": "/packs/application.js.map",
-  "favicon.ico": "/packs/images/favicon.ico"
+  "favicon.ico": "/packs/images/favicon.ico",
+  "sample.png": "/packs/images/sample.png"
 }
